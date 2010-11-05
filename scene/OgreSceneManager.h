@@ -1,5 +1,5 @@
 ///
-/// @file Engine.h
+/// @file OgreSceneManager.h
 /// @author Mancobian Poemandres
 /// @license BSD License
 ///
@@ -30,22 +30,39 @@
 /// USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///
 
-#ifndef RSSD_ENGINE_H_
-#define RSSD_ENGINE_H_
+#ifndef RSSD_OGRESCENEMANAGER_H_
+#define RSSD_OGRESCENEMANAGER_H_
 
 #include <OGRE/Ogre.h>
+#include "SceneManager.h"
 
 namespace rssd {
 
-class Engine
+class OgreSceneManager : public rssd::SceneManager
 {
 public:
-  Engine();
-  virtual ~Engine();
-  void loadScene(const std::string &filename);
-  void unloadScene();
-}; /// class Engine
+	OgreSceneManager();
+	virtual ~OgreSceneManager();
+	virtual bool load(const std::string &filename);
+	virtual bool unload();
+	virtual bool update(const double elapsed);
+
+protected:
+	bool createOgre();
+	void destroyOgre();
+	bool createRenderer();
+	void destroyRenderer();
+	bool createWindow();
+	void destroyWindow();
+
+	Ogre::Root *mRoot;
+	Ogre::RenderSystem *mRenderSystem;
+	Ogre::RenderWindow *mRenderWindow;
+	Ogre::SceneManager *mSceneManager;
+	Ogre::Camera *mCamera;
+	Ogre::Viewport *mViewport;
+}; /// class OgreSceneManager
 
 } /// namespace rssd
 
-#endif // RSSD_ENGINE_H_
+#endif // RSSD_OGRESCENEMANAGER_H_

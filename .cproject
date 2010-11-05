@@ -24,23 +24,28 @@
 <folderInfo id="cdt.managedbuild.config.gnu.so.debug.1351016131." name="/" resourcePath="">
 <toolChain id="cdt.managedbuild.toolchain.gnu.so.debug.811898488" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.debug">
 <targetPlatform id="cdt.managedbuild.target.gnu.platform.so.debug.129536851" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.debug"/>
-<builder buildPath="${workspace_loc:/engine/Debug}" id="cdt.managedbuild.target.gnu.builder.so.debug.759154336" managedBuildOn="true" name="Gnu Make Builder.Debug" superClass="cdt.managedbuild.target.gnu.builder.so.debug"/>
+<builder buildPath="${workspace_loc:/engine/Debug}" id="cdt.managedbuild.target.gnu.builder.so.debug.759154336" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.so.debug"/>
 <tool id="cdt.managedbuild.tool.gnu.archiver.base.1005704895" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.345941783" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug">
-<option id="gnu.cpp.compiler.so.debug.option.optimization.level.690630140" superClass="gnu.cpp.compiler.so.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-<option id="gnu.cpp.compiler.so.debug.option.debugging.level.1317556476" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+<option id="gnu.cpp.compiler.so.debug.option.optimization.level.690630140" name="Optimization Level" superClass="gnu.cpp.compiler.so.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+<option id="gnu.cpp.compiler.so.debug.option.debugging.level.1317556476" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+<option id="gnu.cpp.compiler.option.include.paths.906269037" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="${workspace_loc:/core}"/>
+</option>
+<option id="gnu.cpp.compiler.option.other.other.961869984" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -Wno-deprecated -fPIC `pkg-config --cflags OGRE`" valueType="string"/>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.426210591" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.c.compiler.so.debug.990324617" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.debug">
-<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.so.debug.option.optimization.level.710624120" superClass="gnu.c.compiler.so.debug.option.optimization.level" valueType="enumerated"/>
-<option id="gnu.c.compiler.so.debug.option.debugging.level.1578642804" superClass="gnu.c.compiler.so.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.so.debug.option.optimization.level.710624120" name="Optimization Level" superClass="gnu.c.compiler.so.debug.option.optimization.level" valueType="enumerated"/>
+<option id="gnu.c.compiler.so.debug.option.debugging.level.1578642804" name="Debug Level" superClass="gnu.c.compiler.so.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1139354939" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.c.linker.so.debug.1030451654" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.debug">
-<option defaultValue="true" id="gnu.c.link.so.debug.option.shared.1711562555" superClass="gnu.c.link.so.debug.option.shared" valueType="boolean"/>
+<option defaultValue="true" id="gnu.c.link.so.debug.option.shared.1711562555" name="Shared (-shared)" superClass="gnu.c.link.so.debug.option.shared" valueType="boolean"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.1638000549" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug">
-<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.1618780802" superClass="gnu.cpp.link.so.debug.option.shared" valueType="boolean"/>
+<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.1618780802" name="Shared (-shared)" superClass="gnu.cpp.link.so.debug.option.shared" valueType="boolean"/>
+<option id="gnu.cpp.link.option.flags.2076885717" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="`pkg-config --libs OGRE`" valueType="string"/>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.558097846" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 <additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -469,6 +474,8 @@
 </scannerConfigBuildInfo>
 </storageModule>
 <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cconfiguration>
 <cconfiguration id="cdt.managedbuild.config.gnu.so.release.1442139008">
 <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.so.release.1442139008" moduleId="org.eclipse.cdt.core.settings" name="Release">
@@ -491,23 +498,28 @@
 <folderInfo id="cdt.managedbuild.config.gnu.so.release.1442139008." name="/" resourcePath="">
 <toolChain id="cdt.managedbuild.toolchain.gnu.so.release.205338226" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release">
 <targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release.222004823" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
-<builder buildPath="${workspace_loc:/engine/Release}" id="cdt.managedbuild.target.gnu.builder.so.release.1451372657" managedBuildOn="true" name="Gnu Make Builder.Release" superClass="cdt.managedbuild.target.gnu.builder.so.release"/>
+<builder buildPath="${workspace_loc:/engine/Release}" id="cdt.managedbuild.target.gnu.builder.so.release.1451372657" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.so.release"/>
 <tool id="cdt.managedbuild.tool.gnu.archiver.base.1874858654" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.171351998" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release">
-<option id="gnu.cpp.compiler.so.release.option.optimization.level.1803671444" superClass="gnu.cpp.compiler.so.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
-<option id="gnu.cpp.compiler.so.release.option.debugging.level.1864660364" superClass="gnu.cpp.compiler.so.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+<option id="gnu.cpp.compiler.so.release.option.optimization.level.1803671444" name="Optimization Level" superClass="gnu.cpp.compiler.so.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+<option id="gnu.cpp.compiler.so.release.option.debugging.level.1864660364" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+<option id="gnu.cpp.compiler.option.include.paths.1277395784" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="${workspace_loc:/core}"/>
+</option>
+<option id="gnu.cpp.compiler.option.other.other.2022413393" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -Wno-deprecated -fPIC `pkg-config --cflags OGRE`" valueType="string"/>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.516623360" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.c.compiler.so.release.4559488" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release">
-<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.so.release.option.optimization.level.1045428679" superClass="gnu.c.compiler.so.release.option.optimization.level" valueType="enumerated"/>
-<option id="gnu.c.compiler.so.release.option.debugging.level.343107062" superClass="gnu.c.compiler.so.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.so.release.option.optimization.level.1045428679" name="Optimization Level" superClass="gnu.c.compiler.so.release.option.optimization.level" valueType="enumerated"/>
+<option id="gnu.c.compiler.so.release.option.debugging.level.343107062" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1171953275" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.c.linker.so.release.775470021" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.release">
-<option defaultValue="true" id="gnu.c.link.so.release.option.shared.1516962628" superClass="gnu.c.link.so.release.option.shared" valueType="boolean"/>
+<option defaultValue="true" id="gnu.c.link.so.release.option.shared.1516962628" name="Shared (-shared)" superClass="gnu.c.link.so.release.option.shared" valueType="boolean"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.784866238" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release">
-<option defaultValue="true" id="gnu.cpp.link.so.release.option.shared.551507651" superClass="gnu.cpp.link.so.release.option.shared" valueType="boolean"/>
+<option defaultValue="true" id="gnu.cpp.link.so.release.option.shared.551507651" name="Shared (-shared)" superClass="gnu.cpp.link.so.release.option.shared" valueType="boolean"/>
+<option id="gnu.cpp.link.option.flags.2004310515" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="`pkg-config --libs OGRE`" valueType="string"/>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1635359109" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 <additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -935,6 +947,9 @@
 </profile>
 </scannerConfigBuildInfo>
 </storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cconfiguration>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">

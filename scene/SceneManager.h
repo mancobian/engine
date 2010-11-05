@@ -1,5 +1,5 @@
 ///
-/// @file RenderManager.h
+/// @file SceneManager.h
 /// @author Mancobian Poemandres
 /// @license BSD License
 ///
@@ -33,18 +33,19 @@
 #ifndef RSSD_RENDERMANAGER_H_
 #define RSSD_RENDERMANAGER_H_
 
+#include <core>
+
 namespace rssd {
 
-class RenderManager
+class SceneManager
 {
 public:
-  RenderManager();
-  virtual ~RenderManager();
-
-protected:
-  bool create();
-  bool destroy();
-}; /// class RenderManager
+  SceneManager();
+  virtual ~SceneManager();
+  virtual bool load(const std::string &filename) = 0;
+  virtual bool unload() = 0;
+  virtual bool update(const double elapsed) = 0;
+}; /// class SceneManager
 
 } /// namespace rssd
 
