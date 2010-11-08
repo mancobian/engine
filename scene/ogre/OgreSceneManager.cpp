@@ -1,6 +1,6 @@
 #include "OgreSceneManager.h"
 
-using namespace rssd;
+using namespace RSSD;
 
 OgreSceneManager::OgreSceneManager() :
   mRoot(NULL),
@@ -8,7 +8,8 @@ OgreSceneManager::OgreSceneManager() :
   mRenderWindow(NULL),
   mSceneManager(NULL),
   mCamera(NULL),
-  mViewport(NULL)
+  mViewport(NULL),
+  mSceneLoader(NULL)
 {
   this->createOgre();
 }
@@ -20,9 +21,11 @@ OgreSceneManager::~OgreSceneManager()
 
 bool OgreSceneManager::createOgre()
 {
-  this->mRoot = new Ogre::Root("plugins.cfg", "display.cfg", "log.txt");
+  this->mRoot = new Ogre::Root("plugins.cfg", "display.cfg", "engine.log");
+
   this->createRenderer();
   this->createWindow();
+  this->createSceneLoader();
   return true;
 }
 
@@ -30,6 +33,8 @@ void OgreSceneManager::destroyOgre()
 {
   this->destroyWindow();
   this->destroyRenderer();
+  this->destroySceneLoader();
+
   this->mRoot->shutdown();
   delete this->mRoot;
 }
@@ -122,17 +127,40 @@ void OgreSceneManager::destroyWindow()
   }
 }
 
+bool OgreSceneManager::createSceneLoader()
+{
+  assert (this->mSceneManager != NULL);
+  assert (this->mRenderWindow != NULL);
+
+  this->mSceneLoader = new OSMScene(this->mSceneManager, this->mRenderWindow);
+  return true;
+}
+
+void OgreSceneManager::destroySceneLoader()
+{
+  if (this->mSceneLoader)
+  {
+    delete this->mSceneLoader;
+    this->mSceneLoader = NULL;
+  }
+}
+
 bool OgreSceneManager::load(const std::string &filename)
 {
+  if (!this->mSceneLoader) { assert (false); return false; }
+  this->mSceneLoader->initialise(filename.c_str());
+  this->mSceneLoader->createScene();
   return true;
 }
 
 bool OgreSceneManager::unload()
 {
+  if (!this->mSceneManager) { assert (false); return false; }
+  this->mSceneManager->clearScene();
   return true;
 }
 
-bool OgreSceneManager::update(const double elapsed)
+bool OgreSceneManager::update(const float64_t elapsed)
 {
-  return true;
+  return this->mRoot->renderOneFrame();
 }

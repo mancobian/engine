@@ -1,5 +1,5 @@
 ///
-/// @file Engine.h
+/// @file Scene
 /// @author Mancobian Poemandres
 /// @license BSD License
 ///
@@ -30,22 +30,10 @@
 /// USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///
 
-#ifndef RSSD_ENGINE_H_
-#define RSSD_ENGINE_H_
+#ifndef RSSD_SCENE
+#define RSSD_SCENE
 
-#include <OGRE/Ogre.h>
+#include "scene/SceneManager.h"
+#include "scene/ogre/OgreSceneManager.h"
 
-namespace rssd {
-
-class Engine
-{
-public:
-  Engine();
-  virtual ~Engine();
-  void loadScene(const std::string &filename);
-  void unloadScene();
-}; /// class Engine
-
-} /// namespace rssd
-
-#endif // RSSD_ENGINE_H_
+#endif // RSSD_SCENE

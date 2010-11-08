@@ -34,18 +34,19 @@
 #define RSSD_OGRESCENEMANAGER_H_
 
 #include <OGRE/Ogre.h>
-#include "SceneManager.h"
+#include <OgreOSMScene.h>
+#include "scene/SceneManager.h"
 
-namespace rssd {
+namespace RSSD {
 
-class OgreSceneManager : public rssd::SceneManager
+class OgreSceneManager : public RSSD::SceneManager
 {
 public:
 	OgreSceneManager();
 	virtual ~OgreSceneManager();
 	virtual bool load(const std::string &filename);
 	virtual bool unload();
-	virtual bool update(const double elapsed);
+	virtual bool update(const float64_t elapsed);
 
 protected:
 	bool createOgre();
@@ -54,6 +55,8 @@ protected:
 	void destroyRenderer();
 	bool createWindow();
 	void destroyWindow();
+	bool createSceneLoader();
+	void destroySceneLoader();
 
 	Ogre::Root *mRoot;
 	Ogre::RenderSystem *mRenderSystem;
@@ -61,8 +64,9 @@ protected:
 	Ogre::SceneManager *mSceneManager;
 	Ogre::Camera *mCamera;
 	Ogre::Viewport *mViewport;
+	OSMScene *mSceneLoader;
 }; /// class OgreSceneManager
 
-} /// namespace rssd
+} /// namespace RSSD
 
 #endif // RSSD_OGRESCENEMANAGER_H_

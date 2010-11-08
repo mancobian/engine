@@ -1,5 +1,5 @@
 ///
-/// @file PhysicsManager.h
+/// @file Engine.h
 /// @author Mancobian Poemandres
 /// @license BSD License
 ///
@@ -30,18 +30,38 @@
 /// USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///
 
-#ifndef RSSD_PHYSICSMANAGER_H_
-#define RSSD_PHYSICSMANAGER_H_
+#ifndef RSSD_ENGINE_H_
+#define RSSD_ENGINE_H_
+
+#include <cassert>
+#include <Core>
 
 namespace RSSD {
 
-class PhysicsManager
+class SceneManager;
+
+class Engine
 {
 public:
-  PhysicsManager();
-  virtual ~PhysicsManager();
-}; /// class PhysicsManager
+  Engine();
+  virtual ~Engine();
+  void start();
+  void stop();
+  bool loadScene(const std::string &filename);
+  bool unloadScene();
+
+protected:
+  void run();
+  void createManagers();
+  void destroyManagers();
+  bool updateManagers(const float64_t elapsed);
+
+  volatile bool mRunning;
+  Mutex mMainMutex;
+  ThreadPointer mMainThread;
+  SceneManager *mSceneManager;
+}; /// class Engine
 
 } /// namespace RSSD
 
-#endif // RSSD_PHYSICSMANAGER_H_
+#endif // RSSD_ENGINE_H_

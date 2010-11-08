@@ -10,13 +10,13 @@
 /// modification, are permitted provided that the following conditions are met:
 ///
 ///    * Redistributions of source code must retain the above copyright notice,
-/// 		this list of conditions and the following disclaimer.
+///     this list of conditions and the following disclaimer.
 ///    * Redistributions in binary form must reproduce the above copyright notice,
-/// 		this list of conditions and the following disclaimer in the documentation
-/// 		and/or other materials provided with the distribution.
+///     this list of conditions and the following disclaimer in the documentation
+///     and/or other materials provided with the distribution.
 ///    * Neither the name of The Secret Design Collective nor the names of its
-/// 		contributors may be used to endorse or promote products derived from
-/// 		this software without specific prior written permission.
+///     contributors may be used to endorse or promote products derived from
+///     this software without specific prior written permission.
 ///
 /// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 /// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -30,23 +30,25 @@
 /// USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///
 
-#ifndef RSSD_RENDERMANAGER_H_
-#define RSSD_RENDERMANAGER_H_
+#ifndef RSSD_RENDERMANAGER_H
+#define RSSD_RENDERMANAGER_H
 
-#include <core>
+#include <Core>
 
-namespace rssd {
+namespace RSSD {
 
 class SceneManager
 {
 public:
-  SceneManager();
-  virtual ~SceneManager();
+  typedef SharedPointer<SceneManager> Pointer;
+
+  SceneManager() {}
+  virtual ~SceneManager() {}
   virtual bool load(const std::string &filename) = 0;
   virtual bool unload() = 0;
-  virtual bool update(const double elapsed) = 0;
+  virtual bool update(const float64_t elapsed) = 0;
 }; /// class SceneManager
 
-} /// namespace rssd
+} /// namespace RSSD
 
-#endif // RSSD_RENDERMANAGER_H_
+#endif // RSSD_RENDERMANAGER_H

@@ -1,6 +1,6 @@
 #include "PhysicsManager.h"
 
-using namespace rssd;
+using namespace RSSD;
 
 PhysicsManager::PhysicsManager()
 {
